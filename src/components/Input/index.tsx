@@ -21,7 +21,7 @@ const Input = ({
 						className={styles.input_wrap}
 						style={{ border: errors?.[name] && "1px solid red" }}
 					>
-						<img src="/sms.svg" className={styles.input_image} />
+						<img src="/sms.svg" className={styles.input_image} alt="image" />
 						<input
 							type={toggle ? "text" : inputType}
 							className={styles.input_field}

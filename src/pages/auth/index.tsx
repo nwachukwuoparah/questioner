@@ -59,8 +59,9 @@ const Regester = () => {
 						isLoading={isPending}
 						handleClick={handleSubmit(onSubmit)}
 						type="filled"
-						children="Procede"
-					/>
+					>
+						Procede
+					</Button>
 				</div>
 			</div>
 		</div>

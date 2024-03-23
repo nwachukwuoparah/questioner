@@ -71,8 +71,10 @@ export default function Index() {
 						<div className={styles.preview_container}>
 							<h1 className={styles.question}>{preview?.[1]?.question}</h1>
 							<ul className={styles.options}>
-								{preview?.[1]?.options.map((i: string) => (
-									<li className={styles.option}>{i}</li>
+								{preview?.[1]?.options.map((i: string, index) => (
+									<li className={styles.option} key={index}>
+										{i}
+									</li>
 								))}
 							</ul>
 						</div>
