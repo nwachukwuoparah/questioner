@@ -16,8 +16,7 @@ const optionSchema = yup.object().shape({
 export const createSchema = yup.object({
     question: yup
         .string()
-        .required("Question is a required field")
-        .matches(/^[A-Za-z ]+$/, "Question should not contain special characters"),
+        .required("Question is a required field"),
     options: yup
         .array()
         .of(optionSchema) // Use optionSchema to validate each item in the options array
