@@ -9,14 +9,14 @@ import { FiEdit2 } from "react-icons/fi";
 import Delete from "@/components/delete";
 import Show from "@/components/show";
 import Loading from "@/components/loading";
+import { truncateString } from "@/helper";
 
 export default function Index() {
-
+	const [display, setDisplay] = useState(false);
 	const router = useRouter();
 	const [questions, setQuestions] = useState<{ [key: string]: Question }>({});
 	const [preview, setPreview] = useState<[string, Question]>();
 	const [id, setId] = useState<string | null>(null);
-
 
 	useEffect(() => {
 		const token = localStorage.getItem("xetwux");
@@ -42,7 +42,7 @@ export default function Index() {
 	}, [questions]);
 
 	return (
-		<div className={styles.left_body_container} >
+		<div className={styles.left_body_container}>
 			<Show>
 				<Show.When isTrue={id !== null}>
 					<Delete cancel={() => setId(null)} id={id} />
@@ -58,12 +58,13 @@ export default function Index() {
 							className={styles.card_container}
 							key={key}
 							onClick={() => {
+								setDisplay(!display);
 								setPreview([key, value]);
 							}}
 						>
 							<h3 style={{ color: "#f8f8f8" }}>Question {index + 1}</h3>
 							<div className={styles.card}>
-								<p>{value?.question}</p>
+								<p>{truncateString(value?.question, 50)}</p>
 								<div className={styles.action}>
 									<span
 										onClick={() => {
@@ -90,7 +91,12 @@ export default function Index() {
 						</div>
 					))}
 				</div>
-				<div className={styles.preview}>
+				<div
+					className={[
+						styles.preview,
+						display ? styles.previewDisplay : "",
+					].join(" ")}
+				>
 					<div className={styles.preview_container}>
 						<h6 className={styles.question}>{preview?.[1]?.question}</h6>
 						<ul className={styles.options}>
@@ -101,6 +107,12 @@ export default function Index() {
 								</div>
 							))}
 						</ul>
+						<div
+							onClick={() => setDisplay(!display)}
+							className={styles.backButton}
+						>
+							Back
+						</div>
 					</div>
 				</div>
 			</div>
