@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "@/styles/delete.module.css";
-import Button from "@/components/button";
 import {
 	QueryFilters,
 	useMutation,
 	useQueryClient,
 } from "@tanstack/react-query";
 import { deleteQuestions } from "../request/mutate";
+import Button from "../button";
 
 export default function Delete({
 	cancel,
