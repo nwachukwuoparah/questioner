@@ -90,21 +90,12 @@ export default function Index() {
 						</div>
 					))}
 				</div>
-				{/* <div
-					style={{
-						width: "1px",
-						height: "100%",
-						borderLeft: " 1px solid rgba(188, 185, 185, 0.5",
-						position: "sticky",
-						top: 0,
-					}}
-				> </div> */}
 				<div className={styles.preview}>
 					<div className={styles.preview_container}>
 						<h6 className={styles.question}>{preview?.[1]?.question}</h6>
 						<ul className={styles.options}>
 							{preview?.[1]?.options.map((i: string, index) => (
-								<div className={styles.option}>
+								<div className={styles.option} key={index}>
 									<p>{index + 1} .</p>
 									<li key={index}>{i}</li>
 								</div>

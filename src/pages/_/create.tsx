@@ -42,7 +42,6 @@ const Create = () => {
 		},
 	});
 
-
 	const onSubmit: SubmitHandler<Question> = (data) => {
 		const { question, ...others } = data;
 		const sortedArray = others?.options?.map((obj: any) => obj.option);
@@ -115,8 +114,9 @@ const Create = () => {
 							isLoading={isPending}
 							handleClick={handleSubmit(onSubmit)}
 							type="filled"
-							children="Create my account"
-						/>
+						>
+							Create
+						</Button>
 					</div>
 				</div>
 			</div>

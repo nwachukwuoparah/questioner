@@ -15,7 +15,6 @@ import styles from "@/styles/create.module.css";
 import { updateQuestions } from "@/components/request/mutate";
 import { useEffect, useState } from "react";
 
-
 const Update = () => {
 	const router = useRouter();
 	const queryClient = useQueryClient();
@@ -133,8 +132,9 @@ const Update = () => {
 							// isLoading={isLoading}
 							handleClick={handleSubmit(onSubmit)}
 							type="filled"
-							children="Create my account"
-						/>
+						>
+							Update
+						</Button>
 					</div>
 				</div>
 			</div>
