@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { inputType } from "../type.check";
+import { inputType } from "./type.check";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import styles from "@/styles/input.module.css";
 import { MdDeleteOutline } from "react-icons/md";

@@ -71,7 +71,7 @@ export default function Index() {
 												"edit",
 												JSON.stringify([key, value])
 											);
-											router.push("/_/update");
+											router.push("/dashboard/update");
 										}}
 									>
 										<FiEdit2

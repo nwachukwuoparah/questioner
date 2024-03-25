@@ -1,5 +1,5 @@
 import Button from "@/components/button";
-import Input from "@/components/Input";
+import Input from "@/components/input";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IFormInput } from "@/components/type.check";
 import { yupResolver } from "@hookform/resolvers/yup";

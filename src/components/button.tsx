@@ -1,4 +1,4 @@
-import { buttonType } from "../type.check";
+import { buttonType } from "./type.check";
 import styles from "@/styles/button.module.css";
 
 

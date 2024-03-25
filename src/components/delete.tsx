@@ -5,7 +5,7 @@ import {
 	useMutation,
 	useQueryClient,
 } from "@tanstack/react-query";
-import { deleteQuestions } from "../request/mutate";
+import { deleteQuestions } from "./request/mutate";
 
 export default function Delete({
 	cancel,
