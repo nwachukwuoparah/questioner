@@ -19,6 +19,13 @@ const Create = () => {
 	const router = useRouter();
 	const queryClient = useQueryClient();
 
+	useEffect(() => {
+		const token = localStorage.getItem("xetwux");
+		if (!token) {
+			router.push("/");
+		}
+	}, [router]);
+
 	const {
 		control,
 		register,

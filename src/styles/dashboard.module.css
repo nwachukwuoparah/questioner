@@ -24,9 +24,10 @@
 .side_bar_contain {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 80%;
   width: 90%;
-  gap: 15px;
+
 
 }
 
@@ -42,6 +43,9 @@
 .link {
   color: inherit;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap:10px
 }
 
 

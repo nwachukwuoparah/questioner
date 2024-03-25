@@ -20,6 +20,13 @@ const Update = () => {
 	const queryClient = useQueryClient();
 	const [id, setId] = useState();
 
+	useEffect(() => {
+		const token = localStorage.getItem("xetwux");
+		if (!token) {
+			router.push("/");
+		}
+	}, [router]);
+
 	const {
 		control,
 		register,
