@@ -40,7 +40,7 @@ const Button = ({
 				</button>
 			);
 		default:
-			return null;
+			return <></>;
 	}
 };
 
