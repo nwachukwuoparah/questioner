@@ -1,13 +1,15 @@
 import React, { ReactElement, useState } from "react";
 import styles from "@/styles/dashboard.module.css";
 import Link from "next/link";
-
+import { MdDehaze } from "react-icons/md";
 export default function Layout({ children }: { children: ReactElement }) {
 	const [display, setDisplay] = useState(false);
 	return (
 		<div className={styles.container}>
 			<div
-				className={[styles.overlap, !display ? styles.overlapNone : ''].join(' ')}
+				className={[styles.overlap, !display ? styles.overlapNone : ""].join(
+					" "
+				)}
 				onClick={() => setDisplay(!display)}
 			>
 				<div className={styles.side_bar}>
@@ -27,7 +29,7 @@ export default function Layout({ children }: { children: ReactElement }) {
 			</div>
 			<div className={styles.left_contain}>
 				<div className={styles.header}>
-					<p onClick={() => setDisplay(!display)}>display</p>
+					<MdDehaze className={styles.toggle} onClick={() => setDisplay(!display)} />
 				</div>
 				{children}
 			</div>

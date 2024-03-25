@@ -13,6 +13,7 @@ import {
 import Layout from "@/components/layout";
 import styles from "@/styles/create.module.css";
 import { createQuestions } from "@/components/request/mutate";
+import { useEffect } from "react";
 
 const Create = () => {
 	const router = useRouter();
@@ -35,7 +36,7 @@ const Create = () => {
 		mutationFn: createQuestions,
 		onSuccess: async (data) => {
 			queryClient.invalidateQueries("get-questions" as QueryFilters);
-			router.push("/_");
+			router.push("/dashboard");
 		},
 		onError: (err) => {
 			console.log(err);
@@ -47,7 +48,6 @@ const Create = () => {
 		const sortedArray = others?.options?.map((obj: any) => obj.option);
 		mutate({ question, options: sortedArray });
 	};
-
 	return (
 		<Layout>
 			<div className={styles.create}>

@@ -90,7 +90,7 @@ const Input = ({
 							padding: 10,
 							outline: "none",
 							backgroundColor: "transparent",
-							borderRadius: 8
+							borderRadius: 8,
 						}}
 						{...register(name)}
 						placeholder={placeholder}
@@ -118,7 +118,7 @@ const Input = ({
 						/>
 					</div>
 					<div style={{ lineHeight: 2, color: "red", fontSize: 14 }}>
-						{errors?.[name]?.message}
+						{errors?.["options"] && "Option is required"}
 					</div>
 				</>
 			);

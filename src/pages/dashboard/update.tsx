@@ -38,7 +38,7 @@ const Update = () => {
 		mutationFn: updateQuestions,
 		onSuccess: async (data) => {
 			queryClient.invalidateQueries("update-questions" as QueryFilters);
-			router.push("/_");
+			router.push("/dashboard");
 		},
 		onError: (err) => {
 			console.log(err);
