@@ -6,7 +6,7 @@ import {
 	useQueryClient,
 } from "@tanstack/react-query";
 import { deleteQuestions } from "./request/mutate";
-
+import Button from "@/components/button";
 export default function Delete({
 	cancel,
 	id,
@@ -31,7 +31,7 @@ export default function Delete({
 			<div className={styles.modal}>
 				<h2>Are you sure you want to delete</h2>
 				<div style={{ display: "flex", width: "70%", gap: 30 }}>
-					{/* <Button
+					<Button
 						type="out-line"
 						disabled={false}
 						style={{ marginTop: 15 }}
@@ -50,7 +50,7 @@ export default function Delete({
 						type="filled"
 					>
 						Delete
-					</Button> */}
+					</Button>
 				</div>
 			</div>
 		</div>
