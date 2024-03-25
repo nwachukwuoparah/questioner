@@ -1,11 +1,10 @@
-import Button from "../../components/button";
-import Input from "../../components/Input";
+import Button from "@/components/button";
+import Input from "@/components/Input";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { IFormInput } from "../../components/type.check";
+import { IFormInput } from "@/components/type.check";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { loginSchema } from "../../components/schema";
+import { loginSchema } from "@/components/schema";
 import { useMutation } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 import styles from "@/styles/Iogin.module.css";
 import { regester } from "@/components/request/mutate";
 import { useRouter } from "next/router";
