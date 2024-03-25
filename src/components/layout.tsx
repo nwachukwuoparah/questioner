@@ -13,12 +13,12 @@ export default function Layout({ children }: { children: ReactElement }) {
 				<div className={styles.side_bar}>
 					<div className={styles.side_bar_contain}>
 						<div className={styles.link_contain}>
-							<Link className={styles.link} href="/_">
+							<Link className={styles.link} href="/dashboard">
 								<p>All questions</p>
 							</Link>
 						</div>
 						<div className={styles.link_contain}>
-							<Link href="/_/create" className={styles.link}>
+							<Link href="/dashboard/create" className={styles.link}>
 								<p>Create question</p>
 							</Link>
 						</div>
