@@ -40,8 +40,11 @@ const Show: FunctionComponent<ShowProps> & {
 
 	return when || otherwise;
 };
-
+Show.displayName = "Show";
 Show.When = ({ isTrue, children }) => (isTrue ? (children as ReactNode) : null);
+Show.When.displayName = "Show.When";
+
 Show.Else = ({ render, children }) => render || (children as ReactNode);
+Show.Else.displayName = "Show.Else";
 
 export default Show;
