@@ -1,5 +1,5 @@
-import Button from "../../components/button";
-import Input from "../../components/Input";
+import Button from "@/components/button";
+import Input from "@/components/Input";
 import { Option, Question } from "@/components/type.check";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
