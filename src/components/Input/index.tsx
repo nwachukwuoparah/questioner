@@ -2,6 +2,8 @@ import { useState } from "react";
 import { inputType } from "../type.check";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import styles from "@/styles/input.module.css";
+import { MdDeleteOutline } from "react-icons/md";
+
 const Input = ({
 	type,
 	inputType,
@@ -10,6 +12,10 @@ const Input = ({
 	icon,
 	register,
 	errors,
+	onChange,
+	remove,
+	index,
+	value,
 }: inputType) => {
 	const [toggle, setToggle] = useState<boolean>(false);
 
@@ -27,6 +33,7 @@ const Input = ({
 							className={styles.input_field}
 							{...register(name)}
 							placeholder={placeholder}
+							onChange={onChange}
 						/>
 						{inputType === "password" &&
 							(!toggle ? (
@@ -59,29 +66,62 @@ const Input = ({
 			return (
 				<>
 					<div className={styles.input_wrap}>
-						<select
-							className="input-select"
-							{...register(name)}
-							style={{ border: errors?.[name] && "1px solid red" }}
-						>
-							<option className={styles.option} value="">
-								Select Stack
-							</option>
-							<option className={styles.option} value="Front-end Trainee">
-								Front-end Trainee
-							</option>
-							<option className={styles.option} value="Back-end Trainee">
-								Back-end Trainee
-							</option>
-						</select>
+						<input
+							type={toggle ? "text" : inputType}
+							className={styles.input_field}
+							placeholder={placeholder}
+							onChange={onChange}
+						/>
 					</div>
 					<div style={{ lineHeight: 2, color: "red", fontSize: 14 }}>
 						{errors?.[name]?.message}
 					</div>
 				</>
 			);
+		case "textarea":
+			return (
+				<>
+					<textarea
+						style={{
+							width: "100%",
+							height: 150,
+							border: "1px solid #d9d9d9",
+							color: "rgb(50, 49, 49)",
+							padding: 10,
+							outline: "none",
+							backgroundColor: "transparent",
+							borderRadius: 8
+						}}
+						{...register(name)}
+						placeholder={placeholder}
+					/>
+					<div style={{ lineHeight: 2, color: "red", fontSize: 14 }}>
+						{errors?.[name]?.message}
+					</div>
+				</>
+			);
 		default:
-			return null;
+			return (
+				<>
+					<div className={styles.input_wrap}>
+						{index}
+						<input
+							type={toggle ? "text" : inputType}
+							className={styles.input_field}
+							placeholder={placeholder}
+							onChange={onChange}
+							value={value}
+						/>
+						<MdDeleteOutline
+							style={{ fontSize: 30, color: "red" }}
+							onClick={remove}
+						/>
+					</div>
+					<div style={{ lineHeight: 2, color: "red", fontSize: 14 }}>
+						{errors?.[name]?.message}
+					</div>
+				</>
+			);
 	}
 };
 

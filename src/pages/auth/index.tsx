@@ -1,4 +1,4 @@
-import Button from "../../components/Button";
+import Button from "../../components/button";
 import Input from "../../components/Input";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IFormInput } from "../../components/type.check";
@@ -7,7 +7,7 @@ import { loginSchema } from "../../components/schema";
 import { useMutation } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import styles from "@/styles/Iogin.module.css";
-import { regester } from "@/components/Api/mutate";
+import { regester } from "@/components/request/mutate";
 import { useRouter } from "next/router";
 
 const Regester = () => {

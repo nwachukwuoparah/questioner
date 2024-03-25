@@ -1,5 +1,7 @@
 import { buttonType } from "../type.check";
 import styles from "@/styles/button.module.css";
+
+
 const Button = ({
 	handleClick,
 	children,
@@ -29,7 +31,7 @@ const Button = ({
 		case "out-line":
 			return (
 				<button
-					className={style.button_outline}
+					className={styles.button_outline}
 					style={style}
 					onClick={handleClick}
 				>
